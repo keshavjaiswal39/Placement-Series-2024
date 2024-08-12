@@ -9,16 +9,16 @@ struct array
 	int length;
 };
 
-void display(struct array arr)
+void display(struct array *arr)
 {
 	int i;
 	printf("The elements in the array are: \n");
-	for(i=0;i<arr.length;i++)
+	for(i=0;i<arr->length;i++)
 	{
-		printf("%d ",arr.A[i]);
+		printf("%d ",arr->A[i]);
 	}
-	printf("\nThe size of the array is %d\n",arr.size);
-	printf("The length of the array is %d",arr.length);
+	printf("\nThe size of the array is %d\n",arr->size);
+	printf("The length of the array is %d",arr->length);
 }
 
 
@@ -36,6 +36,6 @@ int main()
 		scanf("%d",&arr.A[i]);
 	}
 	arr.length=n;
-	display(arr);
+	display(&arr);
 	return 0;	
 }
